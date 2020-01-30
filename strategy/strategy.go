@@ -1,7 +1,10 @@
 package strategy
 
+import goex "github.com/nntaoli-project/GoEx"
+
 type Strategy interface {
 	Init()
-	OnData()
+	OnTicker()
+	OnDepth(depths ...*goex.Depth)
 	Exit()
 }
